@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    // Set the seed for random number generation
+    srand(time(NULL));
+    
+    // Variables to store user input
+    int age;
+    char name[50];
+    char color[20];
+    
+    // Get user input
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    
+    printf("Enter your name: ");
+    scanf("%s", name);
+    
+    printf("Enter your favorite color: ");
+    scanf("%s", color);
+    
+    // Generate a random sci-fi novel recommendation
+    char* novels[] = {
+        "The Hitchhiker's Guide to the Galaxy",
+        "Dune",
+        "Neuromancer",
+        "Ender's Game",
+        "Foundation",
+        "Snow Crash",
+        "Brave New World",
+        "1984",
+        "Hyperion",
+        "Starship Troopers"
+    };
+    
+    int numNovels = sizeof(novels) / sizeof(novels[0]);
+    int randomIndex = rand() % numNovels;
+    char* randomNovel = novels[randomIndex];
+    
+    // Display the recommendation
+    printf("\nDear %s,\n", name);
+    printf("Based on your age of %d and your love for the color %s,\n", age, color);
+    printf("We recommend you read the sci-fi novel:\n");
+    printf("%s\n", randomNovel);
+    
+    return 0;
+}
+
+
+## this program we use the srand() function to seed the random number generator based on the current time. This ensures that we get different random values each time we run the program.
+
+We prompt the user to enter their age, name, and favorite color using printf() and scanf(). The input is stored in variables age, name, and color.
+
+Next, we define an array novels containing a list of sci-fi novels. We determine the number of novels using sizeof(novels) / sizeof(novels[0]), and then generate a random index to select a random novel from the array.
+
+Finally, we use printf() to display a personalized recommendation to the user, including their name, age, favorite color, and the randomly selected sci-fi novel.
+
+Note: Remember to compile and run the C program using a C compiler such as GCC.
